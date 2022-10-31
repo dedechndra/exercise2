@@ -157,7 +157,64 @@ namespace QuickShort
             dc = high;
 
             pivot = dede[low];
-        }  
+            while (i <= dc)
+            {
+                //search for an element greater than pivot
+                while ((dede[i] <= pivot) && (i <= high))
+                {
+                    i++;
+                    cmp_count++;
+                }
+                cmp_count++;
+
+                //search for an element less than equal to pivot
+                while
+                     ((dede[dc] > pivot) && (dc >= low))
+                {
+                    dc--;
+                    cmp_count++;
+                }
+                cmp_count++;
+
+                if (i < dc) //if the greater element is on the left of the element
+                {
+                    //swap the element at index i whit the element at index dc
+                    swap(i, dc);
+                    mov_count++;
+
+                }
+            }
+            // dc now contains the index of the last element in the sorted list
+
+            if (low < dc)
+            {
+                //Move the pivot to its correct posituon in the list
+                swap(low, dc);
+                mov_count++;
+            }
+            // sort the list on the left of pivot uisng quick sort
+            q_sort(low, dc - 1);
+
+            //Sort the list on the right of pivot using quick sort
+            q_sort(dc + 1, high);
+
+        }
+
+        void display()
+        {
+            Console.WriteLine("\n--------------------");
+            Console.WriteLine(" Sorted array Elements");
+            Console.WriteLine("----------------------");
+
+            for (int dc = 0; dc < n; dc++)
+            {
+                Console.WriteLine(dede[dc]);
+            }
+            Console.WriteLine("\nNumber Of Comparisons: " + cmp_count);
+            Console.WriteLine("\nNumber of data movemenet: " + mov_count);
+        }
+
+        
 
     }
 
