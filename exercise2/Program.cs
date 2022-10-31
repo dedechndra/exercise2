@@ -25,7 +25,28 @@ namespace exercise2
                 Console.WriteLine("------------------------");
                 Console.WriteLine(" Masukkan elemen array ");
                 Console.WriteLine("------------------------");
+                // Pengguna memasukkan elemen pada array
+                for (int i = 0; i < n; i++)
+                {
+                    Console.WriteLine("<" + (i + 1) + "> ");
+                    string s1 = Console.ReadLine();
+                    dede[i] = Int32.Parse(s1);
+                }
             }
+        }
+
+        private void display()
+        {
+            // Menampilkan array yang tersusun
+            Console.WriteLine("");
+            Console.WriteLine("------------ -----------------------");
+            Console.WriteLine(" Element array yang telah tersusun");
+            Console.WriteLine("-----------------------------------");
+            for (int dc = 0; dc < n; dc++)
+            {
+                Console.WriteLine(dede[dc]++);
+            }
+            Console.WriteLine("");
         }
     }
 }
