@@ -214,10 +214,26 @@ namespace QuickShort
             Console.WriteLine("\nNumber of data movemenet: " + mov_count);
         }
 
-        
-
+        int getSize()
+        {
+            return (n);
+        }
+        static void Main(String[] args)
+        {
+            //Declaring the object of the class
+            Program myList = new Program();
+            //Acept Array elements
+            myList.read();
+            //calling the sorting function
+            //frist call to quick sort Algorithm
+            myList.q_sort(0, myList.getSize() - 1);
+            //display sorted array
+            myList.display();
+            //to exit from the console
+            Console.WriteLine("\n\nPress enter to exit.");
+            Console.Read();
+        }
     }
-
 }
 
 
