@@ -48,6 +48,25 @@ namespace exercise2
             }
             Console.WriteLine("");
         }
+
+        public void BubleSortArray()
+        {
+            for (int i = 1; i < n; i++) // for n-1 passes
+            {
+                // Pada pass i , bandingkan n - i elemen pertama dengan elemen selanjutnya 
+                for (int dc = 0; dc < n - i; dc++)
+                {
+                    if (dede[dc] > dede[dc + 1]) // jika elemen tidak dalam urutan yang benar
+                    {
+                        //tukar elemen
+                        int temp;
+                        temp = dede[dc];
+                        dede[dc] = dede[dc + 1];
+                        dede[dc + 1] = temp;
+                    }
+                }
+            }
+        }
     }
 }
 
