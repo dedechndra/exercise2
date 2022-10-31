@@ -98,6 +98,7 @@ namespace QuickShort
 
         //number of elements in array
         private int n;
+        private int pivot;
 
         void read()
         {
@@ -133,8 +134,35 @@ namespace QuickShort
             dede[x] = dede[y];
             dede[y] = temp;
         }
+        public void q_sort(int low, int high)
+        {
+            int i, dc, k;
+            if (low >= high)
+                return;
+            int mid = (low + high / 2);
+
+            //Partition the list into two parts:
+            // one containing elements less that or equal to pivot
+            //Outher containning elements greather than pivot
+
+            i = low;
+            dc = mid + 1;
+            k = low;
+
+            //Partition the list into two parts:
+            // one containing elements less that or equal to pivot
+            //Outher containning elements greather than pivot
+
+            i = low + 1;
+            dc = high;
+
+            pivot = dede[low];
+        }  
+
     }
+
 }
+
 
 
     
