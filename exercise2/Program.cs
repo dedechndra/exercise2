@@ -124,6 +124,15 @@ namespace QuickShort
                 dede[i] = Int32.Parse(s1);
             }
         }
+        //swaps the element at index x with the element at index y
+
+        void swap(int x, int y)
+        {
+            int temp;
+            temp = dede[x];
+            dede[x] = dede[y];
+            dede[y] = temp;
+        }
     }
 }
 
